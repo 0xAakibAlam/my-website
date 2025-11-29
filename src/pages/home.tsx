@@ -3,17 +3,17 @@ import Heading from "../components/intro-heading";
 
 function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Heading
         name="I'm Md Aakib Alam Ansari"
         description={[
-          "- Software Developer",
-          "- Open Source Contributor",
-          "- Competitive Programmer",
-          "- Tech Enthusiast",
+          "Software Developer",
+          "Open Source Contributor",
+          "Competitive Programmer",
+          "Tech Enthusiast",
         ]}
-      ></Heading>
-      <About></About>
+      />
+      <About />
     </div>
   );
 }

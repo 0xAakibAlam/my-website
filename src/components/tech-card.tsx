@@ -1,33 +1,10 @@
-import { useState, useEffect } from "react";
-
 function TechCard({ text, col }: { text: string; col: string }) {
-  const [fontSize, setFontSize] = useState<number>(24);
-  const backgroundColor =
-    col === "teal"
-      ? "bg-teal-200"
-      : col === "lime"
-      ? "bg-lime-200"
-      : "bg-gray-200";
-
-  useEffect(() => {
-    const containerWidth = 150;
-    const containerHeight = 60;
-    const textLength = text.length;
-    const maxWidth = containerWidth * 0.95;
-
-    const newFontSize = Math.min(maxWidth / textLength, containerHeight * 0.8);
-
-    setFontSize(newFontSize);
-  }, [text]);
-
   return (
-    <div
-      className={
-        "flex justify-center items-center w-32 h-12 lg:w-40 lg:h-16 m-2 rounded-lg " +
-        backgroundColor
-      }
-    >
-      <h1 style={{ fontSize: `${fontSize}px` }}>{text}</h1>
+    <div className="group relative px-6 py-3 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
+      <span className="text-gray-300 group-hover:text-cyan-400 transition-colors duration-300 font-medium text-sm sm:text-base">
+        {text}
+      </span>
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/0 to-purple-500/0 group-hover:from-cyan-500/5 group-hover:to-purple-500/5 transition-all duration-300 pointer-events-none"></div>
     </div>
   );
 }

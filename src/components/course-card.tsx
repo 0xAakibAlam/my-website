@@ -1,28 +1,10 @@
-import { useState, useEffect } from "react";
-
 function CourseCard({ text, col }: { text: string; col: string }) {
-  const [fontSize, setFontSize] = useState<number>(24);
-  const backgroundColor = col === "cyan" ? "bg-cyan-200" : "bg-gray-200";
-
-  useEffect(() => {
-    const containerWidth = 400;
-    const containerHeight = 200;
-    const textLength = text.length;
-    const maxWidth = containerWidth * 0.95;
-
-    const newFontSize = Math.min(maxWidth / textLength, containerHeight * 0.8);
-
-    setFontSize(newFontSize);
-  }, [text]);
-
   return (
-    <div
-      className={
-        "flex justify-center items-center text-center w-64 md:w-96 h-16 md:h-20 m-2 md:m-4 rounded-lg " +
-        backgroundColor
-      }
-    >
-      <h1 style={{ fontSize: `${fontSize}px` }}>{text}</h1>
+    <div className="group relative px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg hover:border-purple-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
+      <span className="text-gray-300 group-hover:text-purple-400 transition-colors duration-300 font-medium text-sm sm:text-base">
+        {text}
+      </span>
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/0 to-purple-500/0 group-hover:from-cyan-500/5 group-hover:to-purple-500/5 transition-all duration-300 pointer-events-none"></div>
     </div>
   );
 }
