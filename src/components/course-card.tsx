@@ -1,4 +1,4 @@
-function CourseCard({ text, col }: { text: string; col: string }) {
+function CourseCard({ text }: { text: string }) {
   return (
     <div className="group relative px-6 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg hover:border-purple-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
       <span className="text-gray-300 group-hover:text-purple-400 transition-colors duration-300 font-medium text-sm sm:text-base">

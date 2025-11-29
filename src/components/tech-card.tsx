@@ -1,4 +1,4 @@
-function TechCard({ text, col }: { text: string; col: string }) {
+function TechCard({ text }: { text: string }) {
   return (
     <div className="group relative px-6 py-3 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
       <span className="text-gray-300 group-hover:text-cyan-400 transition-colors duration-300 font-medium text-sm sm:text-base">
